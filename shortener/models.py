@@ -12,7 +12,7 @@ def generate_short_url():
 class URL(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
-    original_url = models.URLField()
+    original_url = models.URLField(max_length=2000, blank=False, null=False)
     short_url = models.CharField(max_length=15, unique=True, default=generate_short_url)
     added_time = models.DateTimeField(auto_now_add=True)
 
