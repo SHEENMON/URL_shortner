@@ -8,7 +8,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'url-shortner-trah.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'url-shortner-trah.onrender.com'] #render deployed url- url-shortner-trah.onrender.com
 
 
 INSTALLED_APPS = [
@@ -62,6 +62,19 @@ DATABASES = {
         'PORT': config('DB_PORT', cast=int),
     }
 }
+
+#for local testing
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': config('DB_NAME'),
+#         'USER': config('DB_USER'),
+#         'PASSWORD': config('DB_PASSWORD'),
+#         'HOST': config('DB_HOST'),
+#         'PORT': config('DB_PORT', cast=int),
+#     }
+# }
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
